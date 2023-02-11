@@ -1,11 +1,14 @@
 const productsContainer = document.querySelector(".products");
 
-fetch("https://dummyjson.com/products")
-.then((response)=> response.json())
-.then((data) => {
-    let items = data.products;
-    items = items.map((item) => {
-        return `
+renderProducts();
+
+function renderProducts() {
+    fetch("https://dummyjson.com/products")
+        .then((response) => response.json())
+        .then((data) => {
+            let items = data.products;
+            items = items.map((item) => {
+                return `
         <div class="product" data-id="${item.id}">
         <img class="product-thumbnail" src="${item.images[0]}" alt="${item.title}">
         <div class="product-details">
@@ -20,6 +23,7 @@ fetch("https://dummyjson.com/products")
         
     </div>
         `
-    });
-    productsContainer.innerHTML = items.join(""); // join all the items as a single string and render in products
-})
+            });
+            productsContainer.innerHTML = items.join(""); // join all the items as a single string and render in products
+        })
+}
