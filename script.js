@@ -13,8 +13,8 @@ function renderProducts() {
         <img class="product-thumbnail" src="${item.images[0]}" alt="${item.title}">
         <div class="product-details">
             <div>
-                <div class="title">Title:<span>${item.title}</span></div>
-                <div class="brand">Brand:<span>${item.brand}</span></div>
+                <div class="title"><b>Title:</b><span>${item.title}</span></div>
+                <div class="brand"><b>Brand:</b><span>${item.brand}</span></div>
             </div>
             <div class="price">${item.price}</div>
             <div class="rating">${item.rating}</div>
